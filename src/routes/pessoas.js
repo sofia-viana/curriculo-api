@@ -12,7 +12,7 @@ router.get("/:id", async (req, res) => {
     const { id} = req.params;
     const resultado = await pool.query("SELECT * FROM pessoas WHERE id = $1", [id]);
     if(resultado.rows.lenght === 0 ){
-        returns res.status(404).send({status: "fail", message: "Pessoa não encontrada"});
+        return res.status(404).send({status: "fail", message: "Pessoa não encontrada"});
     }
     res.status(200).send(resultado.rows[0]);
 });
