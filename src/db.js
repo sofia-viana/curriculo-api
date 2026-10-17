@@ -1,5 +1,9 @@
 import "dotenv/config";
+import net from "node:net";
 import pg from "pg";
+
+net.setDefaultAutoSelectFamilyAttemptTimeout(5000);
+pg.types.setTypeParser(1082, (value) => value);
 
 pg.types.setTypeParser(1082, (value)=> value);
 

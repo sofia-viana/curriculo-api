@@ -60,7 +60,7 @@ try {
     grau: "Tecnólogo",
     data_inicio: "2025-02",                                 
     data_fim: "2027-07",                                   
-    descricao: "Descreva o que você estuda.",                  // TROQUE
+    descricao: "Graduanda em Sistemas para Internet pela Universidade Católica de Pernambuco (UNICAP), com foco em desenvolvimento web e análise de dados. Conhecimentos em programação, desenvolvimento de aplicações e banco de dados. Aprimoramento de habilidades analíticas, técnicas e de resolução de problemas para criação de soluções tecnológicas.",                  // TROQUE
   });
 
   await insert("formacoes", {
@@ -70,7 +70,7 @@ try {
     grau: "Técnico",
     data_inicio: "2022-02",                                 
     data_fim: "2024-12",                                   
-    descricao: "Descreva o que você estuda.",                  // TROQUE
+    descricao: "Curso técnico em Programação de Jogos Digitais pela ETE Cícero Dias, com foco no desenvolvimento de jogos e aplicações interativas.  Aprendizado em programação, desenvolvimento web, Unity 3D, game design e Arduino. Desenvolvimento de habilidades em lógica de programação, criatividade e resolução de problemas.",
   });
 
   await insert("experiencias", {
@@ -79,22 +79,20 @@ try {
     cargo: "Jovem Aprendiz",                              
     data_inicio: "2026-07-01",                                 
     atual: true,
-    descricao: "Descreva suas tarefas em termos gerais.",      // TROQUE
+    descricao: "Jovem Aprendiz na Amarante Hotéis, atuando na área de Amarante Viagens, com foco no suporte às operações de viagens corporativas e hospedagens. Experiência com reservas, atendimento, organização de informações e acompanhamento de solicitações. Atuação em pesquisas de satisfação, análise de indicadores e identificação de oportunidades de melhoria nos processos.",      // TROQUE
   });
 
   const meuP1 = await insert("projetos", {
     pessoa_id: eu.id,
-    nome: "AvaliaFilmes",                                           // TROQUE
+    nome: "AvaliaFilmes",
     descricao: "Plataforma de avaliações de filmes (projeto da faculdade).",
-    url_repositorio: "https://github.com/sofia-viana/cinelog", // TROQUE
-    data_inicio: "2025-08-01",                                 // TROQUE
+    data_inicio: "2026-05-01",                               
   });
   const meuP2 = await insert("projetos", {
     pessoa_id: eu.id,
     nome: "Place Brokers",                                     
     descricao: "Site de imobiliária (projeto em grupo da faculdade).",
-    url_repositorio: "https://github.com/sofia-viana/place-brokers", // TROQUE
-    data_inicio: "2026-03-01",                                 // TROQUE
+    data_inicio: "2026-03-01",                                
   });
 
   await insert("idiomas", { pessoa_id: eu.id, idioma: "Português", nivel: "Nativo" });
@@ -140,7 +138,7 @@ try {
 
   console.log("Seed concluído: 2 currículos cadastrados (o seu e o do Carlos).");
 } catch (err) {
-  console.error("Falha no seed:", err.message);
+  console.error("Falha no seed:", err);
   process.exitCode = 1;
 } finally {
   await pool.end();

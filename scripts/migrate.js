@@ -7,7 +7,7 @@ try {
     await pool.query(sql);
     console.log("Tabelas criadas/atualizadas com sucesso.")
 } catch (err){
-    console.error("Falha na migração: ", err.message);
+    console.error("Falha na migração:", err);
     process.exitCode= 1;
 } finally {
     await pool.end();
